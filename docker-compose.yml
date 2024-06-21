@@ -1,0 +1,53 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: app
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        ports:
+            - '9000:9000'
+        volumes:
+            - '.:/var/www'
+        networks:
+            - laravel
+        links:
+            - mysql
+    mysql:
+        image: 'mysql:oracle'
+        platform: linux/x86_64
+        restart: unless-stopped
+        container_name: mysql
+        tty: true
+        environment:
+            SERVICE_NAME: mysql
+            MYSQL_DATABASE: laravel
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: user
+            MYSQL_PASSWORD: 123456
+        volumes:
+            - './dockerfiles/mysql:/docker-entrypoint-initdb.d'
+        ports:
+            - '3306:3306'
+        networks:
+            - laravel
+    nginx:
+        image: 'nginx:stable-alpine3.19-slim'
+        container_name: nginx
+        restart: unless-stopped
+        tty: true
+        ports:
+            - '80:80'
+        volumes:
+            - '.:/var/www'
+            - './dockerfiles/nginx/default.conf:/etc/nginx/conf.d/default.conf'
+        networks:
+            - laravel
+networks:
+    laravel:
+        driver: bridge
+volumes:
+    mysql: null
+    app: null
