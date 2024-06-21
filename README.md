@@ -1,8 +1,8 @@
 # Instalação Docker, Laravel 11 Nginx e Mysql
-**Autor:** Matheus Alfaia
-**Requer:** Ubuntu ou Debian da loja de aplicativos do Windows
-**Terminal:** WSL2
-**Docker** Docker ou Docker Desktop
+- **Autor:** Matheus Alfaia
+- **Requer:** Ubuntu ou Debian da loja de aplicativos do Windows
+- **Terminal:** WSL2
+- **Docker** Docker ou Docker Desktop
 ```bash
 $ git clone https://github.com/MattheusAlfaia/docker-laravel
 $ cd nome-da-pasta
