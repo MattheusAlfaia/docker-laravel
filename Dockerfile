@@ -22,8 +22,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Permissões de execução do Composer
 RUN chmod +x /usr/bin/composer
 # Defina as permissões para o diretório e arquivos
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 775 /var/www
+# RUN chown -R www-data:www-data /var/www \
+#     && chmod -R 775 /var/www
+# Dar todas as permissões para o diretório de trabalho e arquivos
+RUN chmod -R 777 /var/www
 
 # Install node and npm
 RUN apk add --no-cache nodejs npm
