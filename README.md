@@ -15,7 +15,7 @@ docker compose up -d
 
 ## Configurar as permissão usuário
 ```bash
-chown -R user:user /home/nome_dir/codes/docker-laravel/
+sudo chown -R user:user /home/nome_dir/codes/docker-laravel/
 ```
 
 ## Acessar o container (Não obrigatório)
