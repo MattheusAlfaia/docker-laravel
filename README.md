@@ -13,6 +13,11 @@ $ cd docker-laravel
 docker compose up -d
 ```
 
+## Configurar as permissão usuário
+```bash
+chown -R user:user /home/nome_dir/codes/docker-laravel/
+```
+
 ## Acessar o container (Não obrigatório)
 Usar apenas se quiser rodar comandos PHP, Composer, Artisan, Npm, etc.
 Acessa o container, o "app" é o nome do container e o "bash" é o comando para acessar o terminal
@@ -50,7 +55,7 @@ DB_PASSWORD=root
 docker compose exec app php artisan migrate
 ```
 
-## Configurar as permissões (Testar se é necessário)
+## Configurar as permissões
 ```bash
 docker compose exec app chown -R www-data:www-data /var/www/storage
 ```
