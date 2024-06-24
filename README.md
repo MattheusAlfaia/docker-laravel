@@ -5,7 +5,7 @@
 - **Docker** Docker ou Docker Desktop
 ```bash
 $ git clone https://github.com/MattheusAlfaia/docker-laravel
-$ cd nome-da-pasta
+$ cd docker-laravel
 ```
 
 ## Criar imagem
