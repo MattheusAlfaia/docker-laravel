@@ -1,4 +1,4 @@
-# Instalação Docker, Laravel 11 Nginx e Mysql
+# Setup Docker, Laravel 11 Nginx e Mysql
 - **Autor:** Matheus Alfaia
 - **Requer:** Ubuntu ou Debian da loja de aplicativos do Windows
 - **Terminal:** WSL2
